@@ -1,0 +1,9 @@
+# Project exclude paths
+/application-base-js/support/domHelper.js
+/application-base-js/support/domHelper.js.map
+/application-base-js/support/itemUtils.js
+/application-base-js/support/itemUtils.js.map
+/application-base-js/support/urlUtils.js
+/application-base-js/support/urlUtils.js.map
+/application-base-js/ApplicationBase.js
+/application-base-js/ApplicationBase.js.map

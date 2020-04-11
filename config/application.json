@@ -1,0 +1,41 @@
+{
+  "title": "",
+  "appid": "",
+  "group": "",
+  "webmap": "168f3df278f94d1fb412e458352d4707",
+  "webscene": "",
+  "portalUrl": "https://www.arcgis.com",
+  "oauthappid": "offFOevlvk4fB6Dt",
+  "proxyUrl": "",
+  "units": "dual",
+  "helperServices": {
+    "geometry": {
+      "url": null
+    },
+    "printTask": {
+      "url": null
+    },
+    "elevationSync": {
+      "url": null
+    },
+    "geocode": [
+      {
+        "url": null
+      }
+    ]
+  },
+  "ApplicationTitle": null,
+  "AnalysisDetails": null,
+  "LeftPanelColor": "#e8912e",
+  "LeftPanelLayer": {
+    "id": "USCnty0408_425_4053"
+  },
+  "LeftPanelTitle": null,
+  "LeftPanelDescription": null,
+  "RightPanelColor": "#56a5d8",
+  "RightPanelLayer": {
+    "id": "USCnty0408_455_4378"
+  },
+  "RightPanelTitle": null,
+  "RightPanelDescription": null
+}
