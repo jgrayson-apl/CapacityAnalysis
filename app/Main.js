@@ -166,8 +166,8 @@ define([
       //console.info(map.layers.map(l => {return `${l.title}: ${l.id}`}).join(' | '));
 
       // MAKE SURE WE HAVE THE CONFIGURED LAYERS //
-      this.getAnalysisLayer(map, this.base.config.LeftPanelLayer.id).then(leftLayer => {
-        this.getAnalysisLayer(map, this.base.config.RightPanelLayer.id).then(rightLayer => {
+      this.getAnalysisLayer('Left Panel', map, this.base.config.LeftPanelLayer.id).then(leftLayer => {
+        this.getAnalysisLayer('Right Panel', map, this.base.config.RightPanelLayer.id).then(rightLayer => {
 
           // ANALYSIS SETTINGS //
           const analysisSettings = [
@@ -264,11 +264,12 @@ define([
      * GET ANALYSIS LAYER
      *  - FIND, LOAD, AND VALIDATE
      *
+     * @param source
      * @param map
      * @param layerId
      * @returns {Promise<FeatureLayer>}
      */
-    getAnalysisLayer: function(map, layerId){
+    getAnalysisLayer: function(source, map, layerId){
       return promiseUtils.create((resolve, reject) => {
         const layer = map.findLayerById(layerId);
         if(layer){
@@ -281,7 +282,7 @@ define([
             }
           }).catch(reject);
         } else {
-          reject(new Error(`Can't find layer: ${layerId}`));
+          reject(new Error(`Can't find ${source} layer.`));
         }
       });
     },
