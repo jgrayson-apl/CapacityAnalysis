@@ -14,6 +14,20 @@
           ]
         },
         {
+          "type": "color",
+          "fieldName": "ThemeTextColor",
+          "label": "Theme Text Color",
+          "transparency": false,
+          "noColor": false
+        },
+        {
+          "type": "color",
+          "fieldName": "ThemeBackgroundColor",
+          "label": "Theme Background, Color",
+          "transparency": false,
+          "noColor": false
+        },
+        {
           "type": "string",
           "fieldName": "ApplicationTitle",
           "label": "Application Title",
@@ -121,6 +135,8 @@
     }
   ],
   "values": {
+    "ThemeTextColor": "#ffffff",
+    "ThemeBackgroundColor": "#0e4574",
     "ApplicationTitle": null,
     "AnalysisDetails": null,
     "LeftPanelColor": "#e8912e",

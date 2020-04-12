@@ -24,6 +24,8 @@
       }
     ]
   },
+  "ThemeTextColor": "#ffffff",
+  "ThemeBackgroundColor": "#0e4574",
   "ApplicationTitle": null,
   "AnalysisDetails": null,
   "LeftPanelColor": "#e8912e",

@@ -103,6 +103,11 @@ define([
         this.applicationReady(map, viewProperties);
       });
 
+      // THEME BACKGROUND AND TEXT COLORS //
+      document.documentElement.style.setProperty('--theme-text-color', this.base.config.ThemeTextColor);
+      document.documentElement.style.setProperty('--theme-background-color', this.base.config.ThemeBackgroundColor);
+
+
     },
 
     /**
