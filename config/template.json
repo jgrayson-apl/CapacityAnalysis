@@ -135,8 +135,8 @@
     }
   ],
   "values": {
-    "ThemeTextColor": "#ffffff",
-    "ThemeBackgroundColor": "#0e4574",
+    "ThemeTextColor": "#fdfdfd",
+    "ThemeBackgroundColor": "#595959",
     "ApplicationTitle": null,
     "AnalysisDetails": null,
     "LeftPanelColor": "#e8912e",

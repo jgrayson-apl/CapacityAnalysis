@@ -1,6 +1,6 @@
 :root {
-  --theme-background-color : #0e4574;
-  --theme-text-color       : #ffffff;
+  --theme-text-color       : #fdfdfd;
+  --theme-background-color : #595959;
 }
 
 html,
@@ -19,7 +19,7 @@ body {
 body {
   display          : flex;
   flex-direction   : column;
-  background-color : #fff;
+  background-color : #ffffff;
 }
 
 #header-panel {
@@ -46,6 +46,25 @@ body {
   color               : var(--theme-text-color);
   border-bottom-color : var(--theme-text-color);
 }
+
+.btn-clear-white {
+  border-color : var(--theme-text-color);;
+}
+
+.btn-transparent:hover {
+  color : var(--theme-text-color);
+}
+
+.esri-widget--button {
+  color            : var(--theme-text-color);
+  background-color : var(--theme-background-color);
+}
+
+.esri-attribution {
+  color            : var(--theme-text-color) !important;
+  background-color : var(--theme-background-color) !important;
+}
+
 
 #header-panel-right {
   flex-shrink     : 0;
@@ -127,20 +146,6 @@ body {
   flex-grow   : 0;
   min-width   : 0;
   min-height  : 0;
-}
-
-.btn-transparent:hover {
-  color : var(--theme-text-color);
-}
-
-.esri-widget--button {
-  color            : var(--theme-text-color);
-  background-color : var(--theme-background-color);
-}
-
-.esri-attribution {
-  color            : var(--theme-text-color) !important;
-  background-color : var(--theme-background-color) !important;
 }
 
 .modal-content {
