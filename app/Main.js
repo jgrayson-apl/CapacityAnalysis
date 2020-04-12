@@ -97,16 +97,15 @@ define([
 
       document.getElementById("app-details-panel").innerHTML = this.base.config.AnalysisDetails;
 
+      // THEME BACKGROUND AND TEXT COLORS //
+      document.documentElement.style.setProperty('--theme-text-color', this.base.config.ThemeTextColor);
+      document.documentElement.style.setProperty('--theme-background-color', this.base.config.ThemeBackgroundColor);
+
       // CREATE MAP //
       itemUtils.createMapFromItem({ item: webMapItem, appProxies: appProxies }).then(map => {
         // APPLICATION IS READY //
         this.applicationReady(map, viewProperties);
       });
-
-      // THEME BACKGROUND AND TEXT COLORS //
-      document.documentElement.style.setProperty('--theme-text-color', this.base.config.ThemeTextColor);
-      document.documentElement.style.setProperty('--theme-background-color', this.base.config.ThemeBackgroundColor);
-
 
     },
 
