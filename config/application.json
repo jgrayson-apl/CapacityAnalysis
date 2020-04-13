@@ -26,18 +26,18 @@
   },
   "ThemeTextColor": "#fdfdfd",
   "ThemeBackgroundColor": "#595959",
-  "ApplicationTitle": null,
+  "ApplicationTitle": "Capacity Analysis and Social Distancing",
   "AnalysisDetails": null,
   "LeftPanelColor": "#e8912e",
   "LeftPanelLayer": {
     "id": "USCnty0408_425_4053"
   },
-  "LeftPanelTitle": null,
+  "LeftPanelTitle": "25% Social Distancing",
   "LeftPanelDescription": null,
   "RightPanelColor": "#56a5d8",
   "RightPanelLayer": {
     "id": "USCnty0408_455_4378"
   },
-  "RightPanelTitle": null,
+  "RightPanelTitle": "55% Social Distancing",
   "RightPanelDescription": null
 }
