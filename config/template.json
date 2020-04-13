@@ -5,7 +5,7 @@
       "fields": [
         {
           "type": "paragraph",
-          "value": "Required: a Web Map with at least two Feature Layers with model results in the custom 'pivoted/compact' output format."
+          "value": "Required: a Web Map with at least two Feature Layers with model results from the '...' GP Tool."
         },
         {
           "type": "webmap",
