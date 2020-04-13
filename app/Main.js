@@ -61,6 +61,10 @@ define([
       domHelper.setPageLocale(this.base.locale);
       domHelper.setPageDirection(this.base.direction);
 
+      // THEME BACKGROUND AND TEXT COLORS //
+      document.documentElement.style.setProperty('--theme-text-color', this.base.config.ThemeTextColor);
+      document.documentElement.style.setProperty('--theme-background-color', this.base.config.ThemeBackgroundColor);
+
       // WEB MAP ITEM //
       const webMapItem = this.base.results.webMapItems[0].value;
       if(!webMapItem){
@@ -80,7 +84,7 @@ define([
         this.base.config.title
         || this.base.config.ApplicationTitle
         || itemUtils.getItemTitle(webMapItem);
-
+      // APPLICATION TITLE //
       domHelper.setPageTitle(this.base.config.title);
       document.getElementById("app-title-node").innerHTML = this.base.config.title;
       document.getElementById("app-details-title").innerHTML = this.base.config.title;
@@ -94,12 +98,8 @@ define([
         || (applicationItem && applicationItem.description)
         || (applicationItem && applicationItem.snippet)
         || 'Compare Capacity Analysis Results';
-
+      // APPLICATION DETAILS //
       document.getElementById("app-details-panel").innerHTML = this.base.config.AnalysisDetails;
-
-      // THEME BACKGROUND AND TEXT COLORS //
-      document.documentElement.style.setProperty('--theme-text-color', this.base.config.ThemeTextColor);
-      document.documentElement.style.setProperty('--theme-background-color', this.base.config.ThemeBackgroundColor);
 
       // CREATE MAP //
       itemUtils.createMapFromItem({ item: webMapItem, appProxies: appProxies }).then(map => {
@@ -155,13 +155,13 @@ define([
       const analysisDetailsDescription = analysisDetailsDialog.querySelector(".analysis-details-panel");
 
       // DISPLAY ANALYSIS DETAILS //
-      this.displayDetails = ({ title, description }) => {
+      this.displayAnalysisDetails = ({ title, description }) => {
         analysisDetailsTitle.innerHTML = title;
         analysisDetailsDescription.innerHTML = description;
         calcite.bus.emit('modal:open', { id: 'analysis-details-dialog' });
       };
 
-      // LAYER IDS //
+      // DEBUG - LAYER IDS //
       //console.info(map.layers.map(l => {return `${l.title}: ${l.id}`}).join(' | '));
 
       // MAKE SURE WE HAVE THE CONFIGURED LAYERS //
@@ -179,29 +179,27 @@ define([
               title: this.base.config.LeftPanelTitle || leftLayer.title,
               description: this.base.config.LeftPanelDescription,
               dataColor: this.base.config.LeftPanelColor,
-              displayDetailsCallback: this.displayDetails
+              displayDetailsCallback: this.displayAnalysisDetails
             },
             {
               id: "right",
               container: document.getElementById('right-analysis-panel'),
               map: map,
               viewProperties: viewProperties,
-              layer: map.findLayerById(this.base.config.RightPanelLayer.id),
+              layer: rightLayer,
               title: this.base.config.RightPanelTitle || rightLayer.title,
               description: this.base.config.RightPanelDescription,
               dataColor: this.base.config.RightPanelColor,
-              displayDetailsCallback: this.displayDetails
+              displayDetailsCallback: this.displayAnalysisDetails
             }
           ];
 
           // VISUALIZE ANALYSIS RESULTS //
           const analysisHandles = analysisSettings.map(analysisSetting => {
-
+            //
             // TODO: TOO MANY OTHER THINGS HAVE CHANGED... RETHINK THIS...
-
-            return this.capacityAnalysisUtils.addAnalysisResults(analysisSetting).then().catch(error => {
-              console.error(error);
-            });
+            //
+            return this.capacityAnalysisUtils.addAnalysisResults(analysisSetting).then().catch(this._displayError);
 
           });
           promiseUtils.eachAlways(analysisHandles).then(() => {
@@ -233,9 +231,11 @@ define([
             this.defaultDataSources = this.capacityAnalysisUtils.createDefaultLayerSources();
 
             // RENDERERS //
+            // - TODO: PUSH INTO CAPACITYANALYSIS CLASS...
             this.initializeRenderers(layers, this.capacityAnalysisUtils.overagesMax);
 
             // POPUP TEMPLATES //
+            // - TODO: PUSH INTO CAPACITYANALYSIS CLASS...
             this.initializePopupTemplate(layers, this.analysisParameters);
 
             // INITIALIZE SLIDER //
@@ -281,7 +281,7 @@ define([
             }
           }).catch(reject);
         } else {
-          reject(new Error(`Can't find ${source} layer.`));
+          reject(new Error(`Can't find '${source}' layer.`));
         }
       });
     },

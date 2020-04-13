@@ -93,10 +93,14 @@ define([
       }
     },
 
+    /**
+     * 
+     */
     constructor: function(){
 
       // REQUIRED FIELDS SET //
       const requiredFieldsSet = new Set();
+      // ADD FIELD INFO //
       const _addFieldInfo = fieldsObject => {
         for(let key in fieldsObject){
           if(fieldsObject.hasOwnProperty(key)){

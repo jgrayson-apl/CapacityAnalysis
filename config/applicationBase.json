@@ -44,6 +44,6 @@
   },
   "webScene": {
     "default": "2d0af95522c442879a1c25d2d4df3763",
-    "fetch": true
+    "fetch": false
   }
 }
