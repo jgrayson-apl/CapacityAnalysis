@@ -550,7 +550,7 @@ define([
                   format: { digitSeparator: true, places: 0 }
                 },
                 {
-                  fieldName: variableFields.Hospitalized.OVER_MAX,
+                  fieldName: variableFields.ICU.OVER_MAX,
                   label: "Number of days ICU beds over capacity",
                   format: { digitSeparator: true, places: 0 }
                 },
