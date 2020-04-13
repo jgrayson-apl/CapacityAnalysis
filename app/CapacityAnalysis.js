@@ -299,9 +299,11 @@ define([
     _getAnalysisResults: function(){
       return promiseUtils.create((resolve, reject) => {
 
-        const NO_DATA = null; // 0;
-
+        // NO DATA //
         // TODO: HOW DOES THE CHART DEAL WITH NULL VALUES ???
+        const NO_DATA = null; // 0;
+                                      
+        // SPLIT DATA ARRAY //
         const splitDataArray = dataArray => {
           return dataArray.split(this.separator).map(value => {
             //return Math.max(0, parseInt(value));
@@ -438,10 +440,10 @@ define([
      */
     _initializeIndicator: function(){
 
-      const fillStart = this.indicatorSVG.getElementById("prop_start");
-      const fillStop1 = this.indicatorSVG.getElementById("prop_v1");
-      const fillStop2 = this.indicatorSVG.getElementById("prop_v2");
-      const fillEnd = this.indicatorSVG.getElementById("prop_end");
+      const fillStart = this.indicatorSVG.querySelector(".prop_start");
+      const fillStop1 = this.indicatorSVG.querySelector(".prop_v1");
+      const fillStop2 = this.indicatorSVG.querySelector(".prop_v2");
+      const fillEnd = this.indicatorSVG.querySelector(".prop_end");
 
       this._updateIndicator = (capacityPercent) => {
 

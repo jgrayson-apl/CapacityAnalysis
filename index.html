@@ -71,6 +71,7 @@
       </div>
     </div>
 
+    <!-- HEADER PANEL -->
     <header id="header-panel" class="panel-no-padding panel-no-border padding-left-1 padding-right-1">
 
       <!-- APP TITLE -->
@@ -82,9 +83,9 @@
         <!-- VARIABLE SELECT -->
         <div id="variables-node" class="inline-block">
           <div class="input-group column-6 tablet-column-4 phone-column-6">
-            <span class="input-group-button">
+            <label for="variableSelect" class="input-group-button">
               <span>Variable&nbsp;</span>
-            </span>
+            </label>
             <select id="variableSelect" class="input-group-input">
               <option value="Hospitalized" selected>Hospitalized</option>
               <option value="ICU">ICU Patients</option>
@@ -135,13 +136,13 @@
               <svg class="indicator-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 300">
                 <defs>
                   <linearGradient id="indicator-linear-gradient-left" x1="0.5" y1="1" x2="0.5" y2="0">
-                    <stop id="prop_start" offset="0%" stop-opacity="1" stop-color="#2c7bb6"/>
-                    <stop id="prop_v1" offset="1%" stop-opacity="1" stop-color="#2c7bb6"/>
-                    <stop id="prop_v2" offset="1%" stop-opacity="0" stop-color="#2c7bb6"/>
-                    <stop id="prop_end" offset="100%" stop-opacity="0.4" stop-color="#2c7bb6"/>
+                    <stop class="prop_start" offset="0%" stop-opacity="1" stop-color="#C0C0C0"/>
+                    <stop class="prop_v1" offset="1%" stop-opacity="1" stop-color="#C0C0C0"/>
+                    <stop class="prop_v2" offset="1%" stop-opacity="0" stop-color="#C0C0C0"/>
+                    <stop class="prop_end" offset="100%" stop-opacity="0.4" stop-color="#C0C0C0"/>
                   </linearGradient>
                 </defs>
-                <path fill="url(#indicator-linear-gradient-left)" d="M19.29,0A19.24,19.24,0,0,0,0,19.29V280.71A19.24,19.24,0,0,0,19.29,300H180.71A19.24,19.24,0,0,0,200,280.71V19.29A19.24,19.24,0,0,0,180.71,0ZM24.5,15h151a10.91,10.91,0,0,1,10.93,10.93V126.71h-25c-2.36-14.28-18.1-26.51-40.55-31.49A40,40,0,0,0,97.5,22.86h0a40,40,0,0,0-40,40h0a40,40,0,0,0,17.41,33c-21,5.36-35.52,17.19-37.76,30.84H13.57V25.93A10.91,10.91,0,0,1,24.5,15ZM85,162.57h30v35h35v30H115v35H85v-35H50v-30H85Z" stroke="#56a5d8" stroke-width="1"/>
+                <path fill="url(#indicator-linear-gradient-left)" d="M19.29,0A19.24,19.24,0,0,0,0,19.29V280.71A19.24,19.24,0,0,0,19.29,300H180.71A19.24,19.24,0,0,0,200,280.71V19.29A19.24,19.24,0,0,0,180.71,0ZM24.5,15h151a10.91,10.91,0,0,1,10.93,10.93V126.71h-25c-2.36-14.28-18.1-26.51-40.55-31.49A40,40,0,0,0,97.5,22.86h0a40,40,0,0,0-40,40h0a40,40,0,0,0,17.41,33c-21,5.36-35.52,17.19-37.76,30.84H13.57V25.93A10.91,10.91,0,0,1,24.5,15ZM85,162.57h30v35h35v30H115v35H85v-35H50v-30H85Z" stroke="#C0C0C0" stroke-width="1"/>
               </svg>
             </div>
             <div class="loader is-active padding-leader-3 padding-trailer-3">
@@ -165,13 +166,13 @@
               <svg class="indicator-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 300">
                 <defs>
                   <linearGradient id="indicator-linear-gradient-right" x1="0.5" y1="1" x2="0.5" y2="0">
-                    <stop id="prop_start" offset="0%" stop-opacity="1" stop-color="#2c7bb6"/>
-                    <stop id="prop_v1" offset="1%" stop-opacity="1" stop-color="#2c7bb6"/>
-                    <stop id="prop_v2" offset="1%" stop-opacity="0" stop-color="#2c7bb6"/>
-                    <stop id="prop_end" offset="100%" stop-opacity="0.4" stop-color="#2c7bb6"/>
+                    <stop class="prop_start" offset="0%" stop-opacity="1" stop-color="#C0C0C0"/>
+                    <stop class="prop_v1" offset="1%" stop-opacity="1" stop-color="#C0C0C0"/>
+                    <stop class="prop_v2" offset="1%" stop-opacity="0" stop-color="#C0C0C0"/>
+                    <stop class="prop_end" offset="100%" stop-opacity="0.4" stop-color="#C0C0C0"/>
                   </linearGradient>
                 </defs>
-                <path fill="url(#indicator-linear-gradient-right)" d="M19.29,0A19.24,19.24,0,0,0,0,19.29V280.71A19.24,19.24,0,0,0,19.29,300H180.71A19.24,19.24,0,0,0,200,280.71V19.29A19.24,19.24,0,0,0,180.71,0ZM24.5,15h151a10.91,10.91,0,0,1,10.93,10.93V126.71h-25c-2.36-14.28-18.1-26.51-40.55-31.49A40,40,0,0,0,97.5,22.86h0a40,40,0,0,0-40,40h0a40,40,0,0,0,17.41,33c-21,5.36-35.52,17.19-37.76,30.84H13.57V25.93A10.91,10.91,0,0,1,24.5,15ZM85,162.57h30v35h35v30H115v35H85v-35H50v-30H85Z" stroke="#56a5d8" stroke-width="1"/>
+                <path fill="url(#indicator-linear-gradient-right)" d="M19.29,0A19.24,19.24,0,0,0,0,19.29V280.71A19.24,19.24,0,0,0,19.29,300H180.71A19.24,19.24,0,0,0,200,280.71V19.29A19.24,19.24,0,0,0,180.71,0ZM24.5,15h151a10.91,10.91,0,0,1,10.93,10.93V126.71h-25c-2.36-14.28-18.1-26.51-40.55-31.49A40,40,0,0,0,97.5,22.86h0a40,40,0,0,0-40,40h0a40,40,0,0,0,17.41,33c-21,5.36-35.52,17.19-37.76,30.84H13.57V25.93A10.91,10.91,0,0,1,24.5,15ZM85,162.57h30v35h35v30H115v35H85v-35H50v-30H85Z" stroke="#C0C0C0" stroke-width="1"/>
               </svg>
             </div>
             <div class="loader is-active padding-leader-3 padding-trailer-3">

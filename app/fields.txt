@@ -1,5 +1,10 @@
 /*
 
+'ID': 'SOURCE_ID',
+'NAME': 'web_name',
+'DAYS': 'web_days',
+'FIRST_DAY': 'web_date'
+
 'CAP_HOSP': 'hcap_input',
 'CAP_ICU': 'icap_input',
 'CAP_VENT': 'vcap_input',
