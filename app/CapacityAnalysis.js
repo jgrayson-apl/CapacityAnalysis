@@ -201,8 +201,8 @@ define([
             viewpoint: this.map.initialViewProperties.viewpoint,
             constraints: { snapToZoom: false },
             highlightOptions: {
-              color: "#0e4574",
-              haloColor: "#0e4574",
+              color: "#343434",
+              haloColor: "#343434",
               haloOpacity: 1.0,
               fillOpacity: 0.2
             },

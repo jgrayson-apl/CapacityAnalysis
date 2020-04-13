@@ -173,8 +173,8 @@ define([
             {
               id: "left",
               container: document.getElementById('left-analysis-panel'),
-              map: map,
               viewProperties: viewProperties,
+              map: map,
               layer: leftLayer,
               title: this.base.config.LeftPanelTitle || leftLayer.title,
               description: this.base.config.LeftPanelDescription,
@@ -184,8 +184,8 @@ define([
             {
               id: "right",
               container: document.getElementById('right-analysis-panel'),
-              map: map,
               viewProperties: viewProperties,
+              map: map,
               layer: rightLayer,
               title: this.base.config.RightPanelTitle || rightLayer.title,
               description: this.base.config.RightPanelDescription,
