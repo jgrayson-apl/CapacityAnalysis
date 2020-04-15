@@ -30,15 +30,13 @@
   "AnalysisDetails": null,
   "LeftPanelColor": "#e8912e",
   "LeftPanelLayer": {
-    "id": "",
-    "idX": "USCnty0408_425_4053"
+    "id": "USCnty0408_425_4053"
   },
   "LeftPanelTitle": "25% Social Distancing",
   "LeftPanelDescription": null,
   "RightPanelColor": "#56a5d8",
   "RightPanelLayer": {
-    "id": "",
-    "idX": "USCnty0408_455_4378"
+    "id": "USCnty0408_455_4378"
   },
   "RightPanelTitle": "55% Social Distancing",
   "RightPanelDescription": null
