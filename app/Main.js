@@ -165,8 +165,8 @@ define([
       //console.info(map.layers.map(l => {return `${l.title}: ${l.id}`}).join(' | '));
 
       // MAKE SURE WE HAVE THE CONFIGURED LAYERS //
-      this.getAnalysisLayer('Left Panel', map, this.base.config.LeftPanelLayer.id).then(leftLayer => {
-        this.getAnalysisLayer('Right Panel', map, this.base.config.RightPanelLayer.id).then(rightLayer => {
+      this.getAnalysisLayer('Left Panel', map, this.base.config.LeftPanelLayer.id, 0).then(leftLayer => {
+        this.getAnalysisLayer('Right Panel', map, this.base.config.RightPanelLayer.id, 1).then(rightLayer => {
 
           // ANALYSIS SETTINGS //
           const analysisSettings = [
@@ -260,17 +260,37 @@ define([
     },
 
     /**
+     *
+     * @param map
+     * @param layerIdx
+     * @returns {*}
+     * @private
+     */
+    _getMapFeatureLayer: function(map, layerIdx){
+
+      const featureLayers = map.layers.filter(layer => {
+        return (layer.type === 'feature');
+      });
+
+      return (layerIdx < featureLayers.length)
+        ? featureLayers.getItemAt(layerIdx)
+        : null;
+
+    },
+
+    /**
      * GET ANALYSIS LAYER
      *  - FIND, LOAD, AND VALIDATE
      *
      * @param source
      * @param map
      * @param layerId
+     * @param alternateLayerIdx
      * @returns {Promise<FeatureLayer>}
      */
-    getAnalysisLayer: function(source, map, layerId){
+    getAnalysisLayer: function(source, map, layerId, alternateLayerIdx){
       return promiseUtils.create((resolve, reject) => {
-        const layer = map.findLayerById(layerId);
+        let layer = map.findLayerById(layerId) || this._getMapFeatureLayer(map, alternateLayerIdx);
         if(layer){
           layer.load().then(() => {
             const validInfo = this.analysisParameters.isValidLayer(layer);
@@ -315,11 +335,9 @@ define([
       variableSelect.addEventListener("change", this.updateRenderersFromSelect);
 
       //
-      // RESET //
+      // RESET THE UI //
       //
-      const resetBtn = document.getElementById("reset-btn");
-      resetBtn.addEventListener("click", () => {
-
+      this.resetUI = () => {
         this.day = 0;
         this.slider.viewModel.setValue(0, this.day);
 
@@ -330,8 +348,13 @@ define([
         this.clearMapInteractions();
 
         this.capacityAnalysisUtils.resetMapViewExtent();
+      };
 
-      });
+      //
+      // RESET BUTTON //
+      //
+      const resetBtn = document.getElementById("reset-btn");
+      resetBtn.addEventListener("click", this.resetUI);
 
     },
 
@@ -641,6 +664,14 @@ define([
 
       // MAPVIEWS CLICK EVENT HANDLERS //
       mapViews.forEach((mapView, mapViewIdx) => {
+
+        // RESET UI WHEN USER DISMISSES THE POPUP //
+        watchUtils.whenEqual(mapView.popup, "visible", true, () => {
+          const popupCloseBtn = mapView.popup.container.querySelector(`.esri-popup__button[title="Close"]`);
+          if(popupCloseBtn){
+            popupCloseBtn.addEventListener('click', this.resetUI);
+          }
+        });
 
         // MAPVIEW CLICK EVENT HANDLER //
         mapView.on("click", clickEvt => {

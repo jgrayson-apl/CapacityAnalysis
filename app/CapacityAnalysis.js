@@ -233,11 +233,11 @@ define([
 
             // MAKE SURE LAYER IS VISIBLE //
             this.layer.visible = true;
+            // UNSET OPACITY WHILE RENDERER IS BEING CONFIGURED //
+            this.layer.opacity = 0.0;
 
             // WHEN MAPVIEW HAS FINISHED UPDATING //
             watchUtils.whenNotOnce(this.mapView, 'updating').then(() => {
-              // REMOVE LOADING //
-              this.loaderNode.classList.remove('is-active');
               // RESOLVE //
               resolve();
             });
@@ -276,6 +276,16 @@ define([
                 // FINISHED UPDATING //
                 watchUtils.whenNotOnce(this.layerView, 'updating').then(() => {
 
+                  // RESET OPACITY AFTER RENDERER IS BEING CONFIGURED //
+                  watchUtils.once(this.layer, 'renderer', () => {
+                    watchUtils.whenNotOnce(this.layerView, 'updating').then(() => {
+                      // RESET OPACITY //
+                      this.layer.opacity = 1.0;
+                      // REMOVE LOADING //
+                      this.loaderNode.classList.remove('is-active');
+                    });
+                  });
+
                   // GET ANALYSIS RESULTS //
                   this._getAnalysisResults().then(resolve).catch(reject);
 
@@ -302,7 +312,7 @@ define([
         // NO DATA //
         // TODO: HOW DOES THE CHART DEAL WITH NULL VALUES ???
         const NO_DATA = null; // 0;
-                                      
+
         // SPLIT DATA ARRAY //
         const splitDataArray = dataArray => {
           return dataArray.split(this.separator).map(value => {
