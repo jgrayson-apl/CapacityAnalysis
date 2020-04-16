@@ -156,7 +156,7 @@ define([
         const capacity = this.capacityAnalysisList.get('left').layerAnalysisResults[variable].Capacity;
         sources[variable]['Hospital Capacity'] = {
           id: 'Hospital Capacity',
-          title: 'Hospital Capacity',
+          title: this.analysisParameters.capacityLabels[variable],
           data: (new Array(this.days)).fill(capacity)
         };
 
@@ -169,7 +169,7 @@ define([
 
         const rightAnalysis = this.capacityAnalysisList.get('right');
         sources[variable][rightAnalysis.id] = {
-          id: rightAnalysis.id, 
+          id: rightAnalysis.id,
           title: rightAnalysis.title,
           data: rightAnalysis.layerAnalysisResults[variable].Counts
         };
@@ -210,7 +210,7 @@ define([
           let capacity = firstFeatureAnalysisResult[variable].Capacity;
           sources[variable]['Hospital Capacity'] = {
             id: 'Hospital Capacity',
-            title: 'Hospital Capacity',
+            title: this.analysisParameters.capacityLabels[variable],
             data: (new Array(this.days)).fill(capacity)
           };
 

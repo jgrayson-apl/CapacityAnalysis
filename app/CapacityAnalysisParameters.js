@@ -79,6 +79,14 @@ define([
           'Ventilated': 'ventilators'
         }
       },
+      capacityLabels: {
+        type: Object,
+        value: {
+          'Hospitalized': 'Hospitalized Bed Capacity',
+          'ICU': 'ICU Bed Capacity',
+          'Ventilated': 'Ventilator Capacity'
+        }
+      },
       separator: {
         type: String,
         value: '|'
@@ -94,7 +102,7 @@ define([
     },
 
     /**
-     * 
+     *
      */
     constructor: function(){
 

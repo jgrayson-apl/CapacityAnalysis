@@ -866,6 +866,7 @@ define([
           : `Number of ${this.variable} Patients`;
 
         // CHART DATASETS //
+        patientsChart.data.datasets[0].label = dataSource['Hospital Capacity'].title;
         patientsChart.data.datasets[0].data = dataSource['Hospital Capacity'].data;
 
         patientsChart.data.datasets[1].label = `${dataSource['left'].title} ${this.variable}`;

@@ -199,7 +199,7 @@ define([
               layers: [this.layer]
             }),
             viewpoint: this.map.initialViewProperties.viewpoint,
-            constraints: { snapToZoom: false },
+            constraints: { snapToZoom: false, rotationEnabled: false },
             highlightOptions: {
               color: "#343434",
               haloColor: "#343434",
