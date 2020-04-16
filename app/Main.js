@@ -547,11 +547,11 @@ define([
                   label: "Ventilators",
                   format: { digitSeparator: true, places: 0 }
                 },
-                {
+                /*{
                   fieldName: "expression/hospital-overages",
                   label: "Hospital patient overage",
                   format: { digitSeparator: true, places: 0 }
-                },
+                },*/
                 {
                   fieldName: variableFields.Hospitalized.PEAK,
                   label: "Maximum patients hospitalized in a single day",
@@ -602,13 +602,13 @@ define([
                 title: "Ventilators",
                 expression: this.getFieldValueFromExpression({ variable: 'Ventilated', day: day }),
                 returnType: "number"
-              },
+              }/*,
               {
                 name: "hospital-overages",
                 title: "Hospital patient overage",
                 expression: this.getOveragesExpression({ variable: 'Hospitalized', day: day }),
                 returnType: "number"
-              }
+              }*/
             ]
           }
         });
