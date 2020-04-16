@@ -82,7 +82,7 @@ define([
       capacityLabels: {
         type: Object,
         value: {
-          'Hospitalized': 'Hospitalized Bed Capacity',
+          'Hospitalized': 'Hospital Bed Capacity',
           'ICU': 'ICU Bed Capacity',
           'Ventilated': 'Ventilator Capacity'
         }
