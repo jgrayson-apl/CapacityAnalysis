@@ -26,18 +26,18 @@
   },
   "ThemeTextColor": "#fdfdfd",
   "ThemeBackgroundColor": "#595959",
-  "ApplicationTitle": "Capacity Analysis and Social Distancing",
-  "AnalysisDetails": null,
+  "ApplicationTitle": "[TEST DATA] Capacity Analysis and Social Distancing",
+  "AnalysisDetails": "A demonstration to visualize capacity analysis results using TEST DATA.",
   "LeftPanelColor": "#e8912e",
   "LeftPanelLayer": {
     "id": "USCnty0408_425_4053"
   },
-  "LeftPanelTitle": "25% Social Distancing",
-  "LeftPanelDescription": null,
+  "LeftPanelTitle": "[TEST DATA] 25% Social Distancing",
+  "LeftPanelDescription": "[TEST DATA] US County resource demand 200 day projections using 4 day doubling time, and 25% social distancing",
   "RightPanelColor": "#56a5d8",
   "RightPanelLayer": {
     "id": "USCnty0408_455_4378"
   },
-  "RightPanelTitle": "55% Social Distancing",
-  "RightPanelDescription": null
+  "RightPanelTitle": "[TEST DATA] 55% Social Distancing",
+  "RightPanelDescription": "[TEST DATA] US County resource demand 200 day projections using 4 day doubling time, and 55% social distancing"
 }

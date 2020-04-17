@@ -216,16 +216,6 @@ define([
             this.mapView.ui.add(home, { position: "top-left", index: 0 });
             this.resetMapViewExtent = () => { home.go(); };
 
-            // LEGEND //
-            //  - WE ONLY DO THIS ONCE //
-            if(this.id === 'left'){
-              const legend = new Legend({
-                container: 'legend-container',
-                view: this.mapView,
-                style: { type: 'card', layout: 'side-by-side' },
-                layerInfos: [{ layer: this.layer, title: 'Capacity Analysis' }]
-              });
-            }
 
             // ADD INDICATOR //
             this.mapView.ui.add(this.indicatorNode, "top-right");
@@ -281,6 +271,20 @@ define([
                     watchUtils.whenNotOnce(this.layerView, 'updating').then(() => {
                       // RESET OPACITY //
                       this.layer.opacity = 1.0;
+
+                      // LEGEND //
+                      //  - WE ONLY DO THIS ONCE //
+                      if(this.id === 'left'){
+                        setTimeout(() => {
+                          const legend = new Legend({
+                            container: 'legend-container',
+                            view: this.mapView,
+                            style: { type: 'card', layout: 'side-by-side' },
+                            layerInfos: [{ layer: this.layer, title: 'Capacity Analysis' }]
+                          });
+                        }, 500);
+                      }
+
                       // REMOVE LOADING //
                       this.loaderNode.classList.remove('is-active');
                     });
